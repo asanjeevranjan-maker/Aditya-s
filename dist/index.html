@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Block Run: Escape Granny</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/assets/index-DRGxuWZV.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-B-qIHS8M.css">
+</head>
+<body>
+  <!-- 3D Canvas Container -->
+  <div id="game-container"></div>
+  
+  <!-- Hardness Level Banner Toast -->
+  <div id="level-toast" class="hidden">HARDNESS LEVEL UP!</div>
+
+  <!-- HUD Interface (Active during gameplay) -->
+  <div id="hud" class="hidden">
+    <!-- Top Left: Coin Count -->
+    <div class="hud-box hud-left">
+      <div class="mc-icon coin-icon"></div>
+      <span id="hud-coins">0</span>
+    </div>
+
+    <!-- Top Center: Danger Meter -->
+    <div class="hud-box hud-center">
+      <div class="danger-title">GRANNY PROXIMITY</div>
+      <div class="danger-bar-outer">
+        <div id="danger-bar-inner" class="danger-bar-fill"></div>
+      </div>
+    </div>
+
+    <!-- Top Right: Score & Hardness Level -->
+    <div class="hud-box hud-right">
+      <div class="score-line">SCORE: <span id="hud-score">0</span></div>
+      <div class="score-line level-line">HARDNESS: LVL <span id="hud-level">1</span></div>
+      <div class="score-line sub-score">BEST: <span id="hud-highscore">0</span></div>
+    </div>
+
+    <!-- Audio Toggle -->
+    <button id="sound-btn" class="mc-btn-small" title="Toggle Sound">🔊</button>
+  </div>
+
+  <!-- Start Menu Screen -->
+  <div id="start-screen" class="overlay-screen">
+    <div class="menu-box">
+      <h1 class="game-title">BLOCK RUN</h1>
+      <h2 class="game-subtitle">ESCAPE GRANNY</h2>
+
+      <div class="menu-preview-card">
+        <p>A voxel endless runner! Avoid obstacles, dodge tracking zombies, and don't let Granny catch you!</p>
+      </div>
+
+      <div class="controls-guide">
+        <div class="key-row"><span class="key">A</span> / <span class="key">D</span> or <span class="key">←</span> <span class="key">→</span> : Switch Lanes</div>
+        <div class="key-row"><span class="key">W</span> or <span class="key">↑</span> / <span class="key">SPACE</span> : Jump</div>
+        <div class="key-row"><span class="key">S</span> or <span class="key">↓</span> : Slide</div>
+      </div>
+
+      <button id="start-btn" class="mc-btn">START RUN</button>
+    </div>
+  </div>
+
+  <!-- Pause Screen Overlay -->
+  <div id="pause-screen" class="overlay-screen hidden">
+    <div class="menu-box">
+      <h2 class="menu-header">GAME PAUSED</h2>
+      <button id="resume-btn" class="mc-btn">RESUME</button>
+      <button id="restart-pause-btn" class="mc-btn">RESTART</button>
+    </div>
+  </div>
+
+  <!-- Game Over Screen -->
+  <div id="game-over-screen" class="overlay-screen hidden">
+    <div class="menu-box game-over-box">
+      <h1 class="died-title">YOU DIED!</h1>
+      <p class="cause-death">Granny caught you!</p>
+
+      <div class="stats-card">
+        <div class="stat-line">DISTANCE: <span id="go-distance">0</span>m</div>
+        <div class="stat-line">COINS: <span id="go-coins">0</span></div>
+        <div class="stat-line highlight-stat">FINAL SCORE: <span id="go-score">0</span></div>
+        <div class="stat-line best-stat">BEST SCORE: <span id="go-highscore">0</span></div>
+      </div>
+
+      <button id="restart-btn" class="mc-btn">RESPAWN</button>
+    </div>
+  </div>
+
+</body>
+</html>
